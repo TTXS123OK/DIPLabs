@@ -1,6 +1,6 @@
 #include "ColorConverter.h"
 
-YUVImg RGB2YUV(RGBImg& rgb_img) {
+YUVImg ColorConverter::RGB2YUV(RGBImg& rgb_img) {
     int height = rgb_img.size();
     int width = rgb_img[0].size();
 
@@ -19,7 +19,7 @@ YUVImg RGB2YUV(RGBImg& rgb_img) {
     return yuv_img;
 }
 
-RGBImg YUV2RGB(YUVImg& yuv_img) {
+RGBImg ColorConverter::YUV2RGB(YUVImg& yuv_img) {
     int height = yuv_img.size();
     int width = yuv_img[0].size();
 
@@ -38,7 +38,7 @@ RGBImg YUV2RGB(YUVImg& yuv_img) {
     return rgb_img;
 }
 
-GrayImg reserveGray(RGBImg& rgb_img) {
+GrayImg ColorConverter::reserveGray(RGBImg& rgb_img) {
     YUVImg yuv_img = RGB2YUV(rgb_img);
 
     int height = rgb_img.size();
@@ -60,7 +60,7 @@ GrayImg reserveGray(RGBImg& rgb_img) {
     return gray_img;
 }
 
-RGBImg changeChannelY(RGBImg& rgb_img) {
+RGBImg ColorConverter::changeChannelY(RGBImg& rgb_img) {
     YUVImg yuv_img = RGB2YUV(rgb_img);
     int height = yuv_img.size();
     int width = yuv_img[0].size();

@@ -2,9 +2,8 @@
 
 #include <string>
 #include <vector>
-#include <cstdint>
 
-#include "ColorConverter.h"
+#include "Type.h"
 
 // This version of BMPConverter only support part of Bitmap format.
 // Reference: https://www.cnblogs.com/xiekeli/archive/2012/05/09/2491191.html
@@ -48,12 +47,14 @@ public:
 
     void load(const std::string& path);
     void save(const std::string& path);
+
     RGBImg extractRGB();
+    GrayImg extractGray();
+
     void buildFromRGB(RGBImg& rgb_img);
-    void buildFromGray(GrayImg& gray_img);
+    void buildFromGray(GrayImg& gray_img, int bit_depth);
 
 private:
     void _load(const std::string& path);
     void _save(const std::string& path);
-    void saveInfoFile(const std::string& path); // Used for debug
 };
