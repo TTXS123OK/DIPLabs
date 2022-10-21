@@ -137,7 +137,7 @@ GrayImg BMPImage::extractGray() {
     int bit_offset = 0;
     for (int i = 0; i < info_header.biHeight; i++) {
         for (int j = 0; j < info_header.biWidth; j++) {
-            uint8_t index = (pixel_data[byte_offset] << bit_offset) >> (8 - info_header.biBitCount);
+            uint8_t index = (uint8_t) ((pixel_data[byte_offset] << bit_offset)) >> (8 - info_header.biBitCount);
             gray_img[info_header.biHeight - i - 1][j] = color_palette[index].B;
 
             bit_offset += info_header.biBitCount;
@@ -207,9 +207,9 @@ void BMPImage::buildFromGray(GrayImg &gray_img, int bit_depth) {
     }
 
     pixel_data.clear();
-    uint8_t buf = 0;
-    int buf_offset = 0;
     for (int i = 0; i < height; i++) {
+        uint8_t buf = 0;
+        int buf_offset = 0;
         for (int j = 0; j < width; j++) {
             int index = gray_img[height - i - 1][j] / (1 << (8 - bit_depth));
             buf += index << (8 - buf_offset - bit_depth);
@@ -221,6 +221,8 @@ void BMPImage::buildFromGray(GrayImg &gray_img, int bit_depth) {
                 buf_offset = 0;
             }
         }
+        if (buf_offset != 0)
+            pixel_data.push_back(buf);
         while (pixel_data.size() % 4 != 0)
             pixel_data.push_back(0);
     }

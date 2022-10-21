@@ -1,1 +1,1 @@
-add_library(lib BMPUtil.cpp ColorConverter.cpp)
+add_library(lib BMPUtil.cpp ColorConverter.cpp MorphologicalOperation.cpp)

@@ -12,3 +12,7 @@ add_subdirectory(src/lib)
 add_executable(lab1 src/lab1.cpp)
 target_include_directories(lab1 PUBLIC ${PROJECT_SOURCE_DIR}/src/lib)
 target_link_libraries(lab1 PUBLIC lib)
+
+add_executable(lab2 src/lab2.cpp)
+target_include_directories(lab2 PUBLIC ${PROJECT_SOURCE_DIR}/src/lib)
+target_link_libraries(lab2 PUBLIC lib)

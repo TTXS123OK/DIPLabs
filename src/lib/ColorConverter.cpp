@@ -1,11 +1,11 @@
 #include "ColorConverter.h"
 
-YUVImg ColorConverter::RGB2YUV(RGBImg& rgb_img) {
+YUVImg ColorConverter::RGB2YUV(RGBImg &rgb_img) {
     int height = rgb_img.size();
     int width = rgb_img[0].size();
 
     YUVImg yuv_img(height, LineData(width, PixelData(3)));
-    for (int i = 0; i < height; i ++) {
+    for (int i = 0; i < height; i++) {
         std::vector<std::vector<int>> line_data;
         for (int j = 0; j < width; j++) {
             int r = rgb_img[i][j][0];
@@ -19,7 +19,7 @@ YUVImg ColorConverter::RGB2YUV(RGBImg& rgb_img) {
     return yuv_img;
 }
 
-RGBImg ColorConverter::YUV2RGB(YUVImg& yuv_img) {
+RGBImg ColorConverter::YUV2RGB(YUVImg &yuv_img) {
     int height = yuv_img.size();
     int width = yuv_img[0].size();
 
@@ -38,7 +38,24 @@ RGBImg ColorConverter::YUV2RGB(YUVImg& yuv_img) {
     return rgb_img;
 }
 
-GrayImg ColorConverter::reserveGray(RGBImg& rgb_img) {
+BinaryImg ColorConverter::Gray2Binary(GrayImg &gray_img) {
+    int height = gray_img.size();
+    int width = gray_img[0].size();
+
+    BinaryImg binary_img(height, BinaryLine(width, 0));
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            if (gray_img[i][j] < 128)
+                binary_img[i][j] = 0;
+            else
+                binary_img[i][j] = 0xff;
+        }
+    }
+
+    return binary_img;
+}
+
+GrayImg ColorConverter::reserveGray(RGBImg &rgb_img) {
     YUVImg yuv_img = RGB2YUV(rgb_img);
 
     int height = rgb_img.size();
@@ -60,7 +77,7 @@ GrayImg ColorConverter::reserveGray(RGBImg& rgb_img) {
     return gray_img;
 }
 
-RGBImg ColorConverter::changeChannelY(RGBImg& rgb_img) {
+RGBImg ColorConverter::changeChannelY(RGBImg &rgb_img) {
     YUVImg yuv_img = RGB2YUV(rgb_img);
     int height = yuv_img.size();
     int width = yuv_img[0].size();

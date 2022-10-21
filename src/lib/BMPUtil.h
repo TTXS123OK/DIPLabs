@@ -45,16 +45,20 @@ public:
     std::vector<uint8_t> pixel_data;
 
 
-    void load(const std::string& path);
-    void save(const std::string& path);
+    void load(const std::string &path);
+
+    void save(const std::string &path);
 
     RGBImg extractRGB();
+
     GrayImg extractGray();
 
-    void buildFromRGB(RGBImg& rgb_img);
-    void buildFromGray(GrayImg& gray_img, int bit_depth);
+    void buildFromRGB(RGBImg &rgb_img);
+
+    void buildFromGray(GrayImg &gray_img, int bit_depth);
 
 private:
-    void _load(const std::string& path);
-    void _save(const std::string& path);
+    void _load(const std::string &path);
+
+    void _save(const std::string &path);
 };
