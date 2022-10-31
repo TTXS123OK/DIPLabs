@@ -17,7 +17,7 @@ public:
 
     static RGBImg logarithmicForRGB(RGBImg &rgb_img);
 
-    // TODO: static RGBImg logarithmicForGray(GrayImg &gray_img);
+    static GrayImg logarithmicForGray(GrayImg &gray_img);
 
     // TODO: static RGBImg fitHistogramForRGB(RGBImg &rgb_img, Histogram *target_hist);
 

@@ -50,6 +50,26 @@ RGBImg VisibilityEnhancement::logarithmicForRGB(RGBImg &rgb_img) {
     return res;
 }
 
+GrayImg VisibilityEnhancement::logarithmicForGray(GrayImg &gray_img) {
+    uint8_t gray_max = 0;
+    int height = gray_img.size(), width = gray_img[0].size();
+
+    for (int i=0; i<height; i++) {
+        for (int j=0; j<width; j++) {
+            gray_max = std::max(gray_max, gray_img[i][j]);
+        }
+    }
+
+    GrayImg res(height, GrayLine(width, 0));
+    for (int i=0; i<height; i++) {
+        for (int j=0; j<width; j++) {
+            res[i][j] = round(log(gray_img[i][j]) / log(gray_max) * 255);
+        }
+    }
+
+    return res;
+}
+
 GrayImg VisibilityEnhancement::fitHistogramForGray(GrayImg &gray_img, Histogram &target_hist) {
     Histogram source_hist = Histogram::buildByGray(gray_img);
     std::unordered_map<uint8_t, uint8_t> map;
