@@ -41,9 +41,9 @@ RGBImg VisibilityEnhancement::logarithmicForRGB(RGBImg &rgb_img) {
     RGBImg res(height, LineData(width, PixelData(3)));
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            res[i][j][0] = round(log(rgb_img[i][j][0]) / log(r_max) * 255);
-            res[i][j][1] = round(log(rgb_img[i][j][1]) / log(g_max) * 255);
-            res[i][j][2] = round(log(rgb_img[i][j][2]) / log(b_max) * 255);
+            res[i][j][0] = round((log(rgb_img[i][j][0]) + 1) / (log(r_max) + 1) * 255);
+            res[i][j][1] = round((log(rgb_img[i][j][1]) + 1) / (log(g_max) + 1) * 255);
+            res[i][j][2] = round((log(rgb_img[i][j][2]) + 1) / (log(b_max) + 1) * 255);
         }
     }
 
@@ -63,7 +63,7 @@ GrayImg VisibilityEnhancement::logarithmicForGray(GrayImg &gray_img) {
     GrayImg res(height, GrayLine(width, 0));
     for (int i=0; i<height; i++) {
         for (int j=0; j<width; j++) {
-            res[i][j] = round(log(gray_img[i][j]) / log(gray_max) * 255);
+            res[i][j] = round((log(gray_img[i][j]) + 1) / (log(gray_max) + 1) * 255);
         }
     }
 
