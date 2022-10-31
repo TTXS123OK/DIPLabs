@@ -58,3 +58,25 @@
 |               original image               |                   detect border                    |
 |:------------------------------------------:|:--------------------------------------------------:|
 | ![image-2-6](./assets/lab2/in/soldier.bmp) | ![image-2-7](./assets/lab2/out/soldier_border.bmp) |
+
+### lab3
+
+#### Requirement
+
+1. Image logarithmic operation for visibility enhancement
+2. Histogram equalization
+
+#### Result
+
+* Logarithmic Operation
+
+|                  before logarithmic                   |                   after logarithmic                   |
+|:-----------------------------------------------------:|:-----------------------------------------------------:|
+| ![image-3-1](./assets/lab3/in/before_logarithmic.bmp) | ![image-3-2](./assets/lab3/out/after_logarithmic.bmp) |
+
+
+* Histogram Equalization
+
+|          before histogram equalization           |           after histogram equalization           |
+|:------------------------------------------------:|:------------------------------------------------:|
+| ![image-3-3](./assets/lab3/in/before_histeq.bmp) | ![image-3-4](./assets/lab3/out/after_histeq.bmp) |
