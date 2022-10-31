@@ -3,7 +3,7 @@
 #include <iostream>
 #include <memory>
 
-#include "Type.h"
+#include "ImgTypes.h"
 #include "BMPUtil.h"
 
 void BMPImage::load(const std::string &path) {

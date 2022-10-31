@@ -1,9 +1,11 @@
 #pragma once
 
-#include "Type.h"
+#include "ImgTypes.h"
 
 class ColorConverter {
 public:
+    ColorConverter() = delete;
+
     static YUVImg RGB2YUV(RGBImg &rgb_img);
 
     static RGBImg YUV2RGB(YUVImg &yuv_img);

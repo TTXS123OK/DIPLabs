@@ -1,9 +1,11 @@
 #pragma once
 
-#include "Type.h"
+#include "ImgTypes.h"
 
 class MorphologicalOperation {
 public:
+    MorphologicalOperation() = delete;
+
     static BinaryImg diff(BinaryImg &A, BinaryImg &B);
 
     static BinaryImg erosion(BinaryImg &A, BinaryTemplate &B);

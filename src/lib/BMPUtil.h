@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "Type.h"
+#include "ImgTypes.h"
 
 // This version of BMPConverter only support part of Bitmap format.
 // Reference: https://www.cnblogs.com/xiekeli/archive/2012/05/09/2491191.html
