@@ -91,3 +91,22 @@ RGBImg GeometricTransformation::scale(RGBImg &img, double ratio) {
 
     return res;
 }
+
+RGBImg GeometricTransformation::shear(RGBImg &img, double dx, double dy) {
+    int original_h = img.size();
+    int original_w = img[0].size();
+
+    int new_h = original_h + (int) (dx * original_w);
+    int new_w = original_w + (int) (dy * original_h);
+
+    RGBImg res(new_h, LineData(new_w, PixelData(3, 128)));
+    for (int i = 0; i < original_h; i++) {
+        for (int j = 0; j < original_w; j++) {
+            res[i + (int) (dx * j)][j + (int) (dy * i)][0] = img[i][j][0];
+            res[i + (int) (dx * j)][j + (int) (dy * i)][1] = img[i][j][1];
+            res[i + (int) (dx * j)][j + (int) (dy * i)][2] = img[i][j][2];
+        }
+    }
+
+    return res;
+}

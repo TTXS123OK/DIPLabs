@@ -21,6 +21,12 @@ int main() {
     RGBImg rgb_img_after_scale = GeometricTransformation::scale(original_rgb_img, 1.5);
     img_after_scale.buildFromRGB(rgb_img_after_scale);
     img_after_scale.save("../assets/lab4/out/scale.bmp");
+
+    BMPImage img_after_shear;
+    RGBImg rgb_img_after_shear = GeometricTransformation::shear(original_rgb_img, 0.3, 0.5);
+    img_after_shear.buildFromRGB(rgb_img_after_shear);
+    img_after_shear.save("../assets/lab4/out/shear.bmp");
+
 //
 //    BMPImage img_after_histeq;
 //    Histogram eq_hist = Histogram::buildEqual(256);

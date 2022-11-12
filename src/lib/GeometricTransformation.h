@@ -12,10 +12,8 @@ public:
 
     static RGBImg scale(RGBImg &img, double ratio);
 
-//    static RGBImg shearOnXAxis(RGBImg &img, double dx);
-//
-//    static RGBImg shearOnYAxis(RGBImg &img, double dy);
-//
+    static RGBImg shear(RGBImg &img, double dx, double dy);
+
 //    static RGBImg mirrorByXAxis(RGBImg &img);
 //
 //    static RGBImg mirrorByYAxis(RGBImg &img);
