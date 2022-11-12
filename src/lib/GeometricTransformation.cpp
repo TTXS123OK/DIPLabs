@@ -5,8 +5,8 @@ RGBImg GeometricTransformation::translation(RGBImg &img, int delta_x, int delta_
     int original_h = img.size();
     int original_w = img[0].size();
 
-    int new_h = original_h + abs(delta_y);
-    int new_w = original_w + abs(delta_x);
+    int new_h = original_h + abs(delta_x);
+    int new_w = original_w + abs(delta_y);
 
     int x_offset = delta_x > 0 ? delta_x : 0;
     int y_offset = delta_y > 0 ? delta_y : 0;
@@ -14,9 +14,9 @@ RGBImg GeometricTransformation::translation(RGBImg &img, int delta_x, int delta_
     RGBImg res(new_h, LineData(new_w, PixelData(3, 128)));
     for (int i = 0; i < original_h; i++) {
         for (int j = 0; j < original_w; j++) {
-            res[i + y_offset][j + x_offset][0] = img[i][j][0];
-            res[i + y_offset][j + x_offset][1] = img[i][j][1];
-            res[i + y_offset][j + x_offset][2] = img[i][j][2];
+            res[i + x_offset][j + y_offset][0] = img[i][j][0];
+            res[i + x_offset][j + y_offset][1] = img[i][j][1];
+            res[i + x_offset][j + y_offset][2] = img[i][j][2];
         }
     }
 
