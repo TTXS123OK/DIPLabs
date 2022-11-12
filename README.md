@@ -80,3 +80,25 @@
 |          before histogram equalization           |           after histogram equalization           |
 |:------------------------------------------------:|:------------------------------------------------:|
 | ![image-3-3](./assets/lab3/in/before_histeq.bmp) | ![image-3-4](./assets/lab3/out/after_histeq.bmp) |
+
+
+### lab4
+
+#### Requirement
+
+1. Translation
+2. Rotation
+3. Scale
+4. Shear
+5. Mirror
+
+#### Result
+
+|                 origin                  |                   translation                   |                   rotation                   |
+|:---------------------------------------:|:-----------------------------------------------:|:--------------------------------------------:|
+| ![image-4-1](./assets/lab4/in/lena.bmp) | ![image-4-2](./assets/lab4/out/translation.bmp) | ![image-4-2](./assets/lab4/out/rotation.bmp) |
+
+
+|                   scale                   |                   shear                   |                     mirror                      |
+|:-----------------------------------------:|:-----------------------------------------:|:-----------------------------------------------:|
+| ![image-4-4](./assets/lab4/out/scale.bmp) | ![image-4-5](./assets/lab4/out/shear.bmp) | ![image-4-6](./assets/lab4/out/mirror_by_x.bmp) |
