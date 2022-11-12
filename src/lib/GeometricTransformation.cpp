@@ -61,13 +61,31 @@ RGBImg GeometricTransformation::rotation(RGBImg &img, double angle) {
     int y_offset = abs(min_y);
 
     RGBImg res(new_h, LineData(new_w, PixelData(3, 128)));
-    for (int i=0; i<original_h; i++) {
-        for (int j=0; j<original_w; j++) {
+    for (int i = 0; i < original_h; i++) {
+        for (int j = 0; j < original_w; j++) {
             int i_ = x_offset + cos(angle) * i - sin(angle) * j;
             int j_ = y_offset + sin(angle) * i + cos(angle) * j;
             res[i_][j_][0] = img[i][j][0];
             res[i_][j_][1] = img[i][j][1];
             res[i_][j_][2] = img[i][j][2];
+        }
+    }
+
+    return res;
+}
+
+RGBImg GeometricTransformation::scale(RGBImg &img, double ratio) {
+    int height = img.size();
+    int width = img[0].size();
+    int new_h = height * ratio;
+    int new_w = width * ratio;
+
+    RGBImg res(new_h, LineData(new_w, PixelData(3, 128)));
+    for (int i = 0; i < new_h; i++) {
+        for (int j = 0; j < new_w; j++) {
+            res[i][j][0] = img[(int) (i / ratio)][(int) (j / ratio)][0];
+            res[i][j][1] = img[(int) (i / ratio)][(int) (j / ratio)][1];
+            res[i][j][2] = img[(int) (i / ratio)][(int) (j / ratio)][2];
         }
     }
 

@@ -9,9 +9,9 @@ public:
     static RGBImg translation(RGBImg &img, int delta_x, int delta_y);
 
     static RGBImg rotation(RGBImg &img, double angle);
-//
-//    static RGBImg scale(RGBImg &img, double ratio);
-//
+
+    static RGBImg scale(RGBImg &img, double ratio);
+
 //    static RGBImg shearOnXAxis(RGBImg &img, double dx);
 //
 //    static RGBImg shearOnYAxis(RGBImg &img, double dy);

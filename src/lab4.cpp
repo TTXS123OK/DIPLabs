@@ -17,10 +17,10 @@ int main() {
     img_after_rotation.buildFromRGB(rgb_img_after_rotation);
     img_after_rotation.save("../assets/lab4/out/rotation.bmp");
 
-//    // histogram equalization demo
-//    BMPImage img_before_histeq;
-//    img_before_histeq.load("../assets/lab3/in/before_histeq.bmp");
-//    GrayImg gray_matrix_before_histeq = img_before_histeq.extractGray();
+    BMPImage img_after_scale;
+    RGBImg rgb_img_after_scale = GeometricTransformation::scale(original_rgb_img, 1.5);
+    img_after_scale.buildFromRGB(rgb_img_after_scale);
+    img_after_scale.save("../assets/lab4/out/scale.bmp");
 //
 //    BMPImage img_after_histeq;
 //    Histogram eq_hist = Histogram::buildEqual(256);
