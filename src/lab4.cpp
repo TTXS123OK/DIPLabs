@@ -27,12 +27,15 @@ int main() {
     img_after_shear.buildFromRGB(rgb_img_after_shear);
     img_after_shear.save("../assets/lab4/out/shear.bmp");
 
-//
-//    BMPImage img_after_histeq;
-//    Histogram eq_hist = Histogram::buildEqual(256);
-//    GrayImg gray_matrix_after_histeq = VisibilityEnhancement::fitHistogramForGray(gray_matrix_before_histeq, eq_hist);
-//    img_after_histeq.buildFromGray(gray_matrix_after_histeq, 8);
-//    img_after_histeq.save("../assets/lab3/out/after_histeq.bmp");
+    BMPImage img_after_mirror_by_x;
+    RGBImg rgb_img_after_mirror_by_x = GeometricTransformation::mirrorByXAxis(original_rgb_img);
+    img_after_mirror_by_x.buildFromRGB(rgb_img_after_mirror_by_x);
+    img_after_mirror_by_x.save("../assets/lab4/out/mirror_by_x.bmp");
+
+    BMPImage img_after_mirror_by_y;
+    RGBImg rgb_img_after_mirror_by_y = GeometricTransformation::mirrorByYAxis(original_rgb_img);
+    img_after_mirror_by_y.buildFromRGB(rgb_img_after_mirror_by_y);
+    img_after_mirror_by_y.save("../assets/lab4/out/mirror_by_y.bmp");
 
     return 0;
 }

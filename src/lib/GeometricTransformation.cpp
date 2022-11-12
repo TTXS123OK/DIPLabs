@@ -110,3 +110,41 @@ RGBImg GeometricTransformation::shear(RGBImg &img, double dx, double dy) {
 
     return res;
 }
+
+RGBImg GeometricTransformation::mirrorByXAxis(RGBImg &img) {
+    int original_h = img.size();
+    int original_w = img[0].size();
+
+    int new_h = 2 * original_h;
+    int new_w = original_w;
+
+    RGBImg res(new_h, LineData(new_w, PixelData(3, 128)));
+    for (int i = 0; i < original_h; i++) {
+        for (int j = 0; j < original_w; j++) {
+            res[2 * original_h - 1 - i][j][0] = img[i][j][0];
+            res[2 * original_h - 1 - i][j][1] = img[i][j][1];
+            res[2 * original_h - 1 - i][j][2] = img[i][j][2];
+        }
+    }
+
+    return res;
+}
+
+RGBImg GeometricTransformation::mirrorByYAxis(RGBImg &img) {
+    int original_h = img.size();
+    int original_w = img[0].size();
+
+    int new_h = original_h;
+    int new_w = 2 * original_w;
+
+    RGBImg res(new_h, LineData(new_w, PixelData(3, 128)));
+    for (int i = 0; i < original_h; i++) {
+        for (int j = 0; j < original_w; j++) {
+            res[i][2 * original_w - 1 - j][0] = img[i][j][0];
+            res[i][2 * original_w - 1 - j][1] = img[i][j][1];
+            res[i][2 * original_w - 1 - j][2] = img[i][j][2];
+        }
+    }
+
+    return res;
+}

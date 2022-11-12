@@ -14,7 +14,7 @@ public:
 
     static RGBImg shear(RGBImg &img, double dx, double dy);
 
-//    static RGBImg mirrorByXAxis(RGBImg &img);
-//
-//    static RGBImg mirrorByYAxis(RGBImg &img);
+    static RGBImg mirrorByXAxis(RGBImg &img);
+
+    static RGBImg mirrorByYAxis(RGBImg &img);
 };
