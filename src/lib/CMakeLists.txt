@@ -1,1 +1,1 @@
-add_library(lib BMPUtil.cpp ColorConverter.cpp MorphologicalOperation.cpp VisibilityEnhancement.cpp GeometricTransformation.h GeometricTransformation.cpp)
+add_library(lib BMPUtil.cpp ColorConverter.cpp Convolution.cpp MorphologicalOperation.cpp VisibilityEnhancement.cpp GeometricTransformation.h GeometricTransformation.cpp)

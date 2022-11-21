@@ -102,3 +102,16 @@
 |                   scale                   |                   shear                   |                     mirror                      |
 |:-----------------------------------------:|:-----------------------------------------:|:-----------------------------------------------:|
 | ![image-4-4](./assets/lab4/out/scale.bmp) | ![image-4-5](./assets/lab4/out/shear.bmp) | ![image-4-6](./assets/lab4/out/mirror_by_x.bmp) |
+
+### lab5
+
+#### Requirement
+
+1. Image mean filtering
+2. Laplacian image enhancement
+
+#### Result
+
+|                 origin                  |                   mean filtering                   |                 laplacian enhancement                 |
+|:---------------------------------------:|:--------------------------------------------------:|:-----------------------------------------------------:|
+| ![image-5-1](./assets/lab5/in/lena.bmp) | ![image-5-2](./assets/lab5/out/mean_filtering.bmp) | ![image-5-2](./assets/lab5/out/laplacian_enhance.bmp) |
