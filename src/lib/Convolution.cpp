@@ -1,6 +1,6 @@
 #include "Convolution.h"
 
-#include <assert.h>
+#include <cassert>
 #include <cmath>
 
 RGBImg Convolution::meanFiltering(RGBImg &img) {
@@ -58,20 +58,13 @@ RGBImg Convolution::bilateralFiltering(RGBImg &img, int window_size, double sigm
     RGBImg res(height, LineData(width, PixelData(3, 0)));
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-
-            // deal with the border
-            if (i - offset_limit < 0 || i + offset_limit >= height || j - offset_limit < 0 ||
-                j + offset_limit >= width) {
-                res[i][j][0] = img[i][j][0];
-                res[i][j][1] = img[i][j][1];
-                res[i][j][2] = img[i][j][2];
-                continue;
-            }
-
-            // do bilateral filtering
             double sum_r = 0, sum_g = 0, sum_b = 0, total_weight = 0;
             for (int k = -offset_limit; k <= offset_limit; k++) {
                 for (int l = -offset_limit; l <= offset_limit; l++) {
+                    if (i + k < 0 || i + k >= height || j + l < 0 || j + l >= width) {
+                        continue;
+                    }
+
                     double dist = pow(k, 2) + pow(l, 2);
                     double residue =
                             pow(img[i + k][j + l][0] - img[i][j][0], 2)
