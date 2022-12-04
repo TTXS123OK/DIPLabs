@@ -115,3 +115,16 @@
 |                 origin                  |                   mean filtering                   |                 laplacian enhancement                 |
 |:---------------------------------------:|:--------------------------------------------------:|:-----------------------------------------------------:|
 | ![image-5-1](./assets/lab5/in/lena.bmp) | ![image-5-2](./assets/lab5/out/mean_filtering.bmp) | ![image-5-2](./assets/lab5/out/laplacian_enhance.bmp) |
+
+
+### lab6
+
+#### Requirement
+
+1. Image Bilateral Filtering
+
+#### Result
+
+|               noise image                |                   denoise 15-75-75                   |
+|:----------------------------------------:|:----------------------------------------------------:|
+| ![image-6-1](./assets/lab6/in/noise.bmp) | ![image-6-2](./assets/lab6/out/denoise_15_75_75.bmp) |
